@@ -1,0 +1,146 @@
+{
+	"keys": [
+		"A.c94bb2740fea4dc4396c39d01b329c5f",
+		"A.1e42fa90d3f54bda0ba64d7281fff342"
+	],
+	"location": {
+		"country": "ec2-ap-southeast-2",
+		"browser": "Chrome"
+	},
+	"connectivity": "Cable",
+	"sites": [
+		{
+			"slug": "group",
+			"name": "Group",
+			"url": "http://taylorandfrancis.com/",
+			"competitors" : [
+				{
+					"slug": "springer",
+					"name": "Springer",
+					"url": "http://www.springernature.com/gb/"
+				},
+				{
+					"slug": "oup",
+					"name": "OUP",
+					"url": "https://global.oup.com/academic/?cc=de&lang=en&"
+				},
+				{
+					"slug": "elsevier",
+					"name": "Elsevier",
+					"url": "https://www.elsevier.com/"
+				},
+				{
+					"slug": "wiley",
+					"name": "Wiley",
+					"url": "http://eu.wiley.com/WileyCDA/Section/index.html"
+				}
+			]
+		},
+		{
+			"slug": "newsroom",
+			"name": "Newsroom",
+			"url": "http://newsroom.taylorandfrancisgroup.com",
+			"competitors" : [
+				{
+					"slug": "oup",
+					"name": "OUP",
+					"url": "https://global.oup.com/academic/news/?cc=de&lang=en&"
+				},
+				{
+					"slug": "wiley",
+					"name": "Wiley",
+					"url": "http://eu.wiley.com/WileyCDA/Section/id-397743.html"
+				},
+				{
+					"slug": "elsevier",
+					"name": "Elsevier",
+					"url": "https://www.elsevier.com/about/newsroom"
+				},
+				{
+					"slug": "springer",
+					"name": "Springer",
+					"url": "http://www.springer.com/gp/about-springer/media/press-releases"
+				}
+			]
+		},
+		{
+			"slug": "author-services",
+			"name": "Author Services",
+			"url": "http://authorservices.taylorandfrancis.com/",
+			"competitors" : [
+				{
+					"slug": "bmj",
+					"name": "BMJ",
+					"url": "http://authors.bmj.com/"
+				},
+				{
+					"slug": "cambridge",
+					"name": "Cambridge",
+					"url": "https://www.cambridge.org/core/services/authors/journals"
+				},
+				{
+					"slug": "elsevier",
+					"name": "Elsevier",
+					"url": "https://www.elsevier.com/authors"
+				},
+				{
+					"slug": "emerald-group",
+					"name": "Emerald Group",
+					"url": "http://www.emeraldgrouppublishing.com/authors/index.htm"
+				},
+				{
+					"slug": "oup",
+					"name": "OUP",
+					"url": "https://academic.oup.com/journals/pages/authors"
+				},
+				{
+					"slug": "palgrave",
+					"name": "Palgrave",
+					"url": "http://www.palgrave.com/gb/journal-authors"
+				},
+				{
+					"slug": "sage-pub",
+					"name": "Sage Publishing",
+					"url": "https://uk.sagepub.com/en-gb/eur/page/journal-author-gateway"
+				},
+				{
+					"slug": "springer",
+					"name": "Springer",
+					"url": "http://www.springersource.com/category/authors/"
+				},
+				{
+					"slug": "wiley",
+					"name": "Wiley",
+					"url": "https://authorservices.wiley.com/home.html"
+				},
+				{
+					"slug": "wolters-kluwer",
+					"name": "Wolters Kluwer",
+					"url": "http://wkauthorservices.editage.com/resources/author-resource-review.html"
+				}
+			]
+		},
+		{
+			"slug": "editor-resources",
+			"name": "Editor Resources",
+			"url": "http://editorresources.taylorandfrancisgroup.com/",
+			"competitors" : [
+				{
+					"slug": "wiley",
+					"name": "Wiley",
+					"url": "https://hub.wiley.com/community/exchanges/pages/about-wiley-exchanges"
+				},
+				{
+					"slug": "elsevier",
+					"name": "Elsevier",
+					"url": "https://www.elsevier.com/editors"
+				},
+				{
+					"slug": "sage",
+					"name": "Sage",
+					"url": "https://us.sagepub.com/en-us/nam/page/journal-editor-gateway"
+				}
+			]
+		}
+	]
+}

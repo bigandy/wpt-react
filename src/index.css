@@ -1,0 +1,65 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	padding: 50px;
+}
+
+table {
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+	width: 100%;
+	margin-bottom: 1em;
+	border-spacing: 0;
+	border-collapse: separate;
+	table-layout: fixed;
+}
+
+table table {
+	border-left: 0;
+	border-top: 0;
+	margin-bottom: 0;
+}
+
+table table td:last-child,
+table table th:last-child {
+	border-right: 0;
+}
+
+table table:last-child tr:last-child td {
+	border-bottom: 0;
+}
+
+th,
+td {
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	text-align: center;
+	padding: 0.5em;
+}
+
+
+.competitors-wrapper {
+	padding: 0;
+	background-color: pink;
+}
+
+.competitor-wrapper {
+	padding: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+
+table {
+	position: relative;
+}
+
+.competitor-switcher {
+	position: absolute;
+	top: -2em;
+	right: 0;
+
+	border: 1px solid grey;
+
+
+}
