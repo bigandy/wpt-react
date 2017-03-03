@@ -9,7 +9,7 @@ table {
 	border-left: 1px solid black;
 	border-top: 1px solid black;
 	width: 100%;
-	margin-bottom: 1em;
+	margin-bottom: 5em;
 	border-spacing: 0;
 	border-collapse: separate;
 	table-layout: fixed;
@@ -54,12 +54,26 @@ table {
 	position: relative;
 }
 
+.competitor-switcher,
+.connectivity-switcher {
+	border: 1px solid grey;
+	padding: 1em;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.connectivity-switcher {
+	margin-bottom: 1em;
+}
+
 .competitor-switcher {
 	position: absolute;
-	top: -2em;
+	top: -4em;
 	right: 0;
+}
 
-	border: 1px solid grey;
-
-
+.connectivity-switcher:hover,
+.competitor-switcher:hover {
+	background-color: pink;
+	color: white;
 }

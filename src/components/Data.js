@@ -47,7 +47,7 @@ class Data extends Component {
 				return null;
 			}
 			return (
-				<th key={ i }>{key}</th>
+				<th key={ i }>{key.replace(/([a-z](?=[A-Z]))/g, '$1 ')}</th>
 			);
 		});
 

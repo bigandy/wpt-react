@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ConnectivitySwitcher extends Component {
 	render() {
 		return (
-			<div onClick={ this.props.switchConnectivity }>{this.props.connectivity}</div>
+			<div className="connectivity-switcher" onClick={ this.props.switchConnectivity }>{this.props.connectivity}</div>
 		);
 	};
 };
