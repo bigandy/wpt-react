@@ -38,6 +38,19 @@ td {
 	padding: 0.5em;
 }
 
+th a {
+	font-size: 0.75em;
+
+
+}
+
+th a::before {
+	content: "\005B";
+}
+
+th a::after {
+	content: "\005D";
+}
 
 .competitors-wrapper {
 	padding: 0;

@@ -9,29 +9,49 @@ class Data extends Component {
 
 		this.average = this.props.data.average;
 
+		// console.log(this.average.firstView);
+
 		this.inclusionList = [
-			'loadTime',
-			'TTFB',
-			'requestsFull',
-			'SpeedIndex'
+			{
+				'name': 'Load Time',
+				'ref': 'loadTime',
+			},
+			{
+				'name': 'First Byte',
+				'ref': 'TTFB',
+			},
+			{
+				'name': 'Start Render',
+				'ref': 'render',
+			},
+			{
+				'name': 'Visually Complete',
+				'ref': 'lastVisualChange',
+			},
+			{
+				'name': 'Requests',
+				'ref': 'requestsFull',
+			},
+			{
+				'name': 'Speed Index',
+				'ref': 'SpeedIndex',
+			},
 		];
 
-		this.keys = Object.keys(this.average.firstView).map((key) => {
-			if (this.inclusionList.includes(key)) {
-				return key;
-			} else {
-				return null;
-			}
-		});
+		this.inclusionListLength = this.inclusionList.length;
 
 		this.state = {
 			showCompetitors: {
 				'author-services': false,
 				'editor-resources': false,
-				'group': true,
+				'group': false,
 				'newsroom': false,
 			},
 		};
+	};
+
+	msToSeconds = (ms) => {
+		return (ms / 1000) + 's';
 	};
 
 	showCompetitor = (event) => {
@@ -41,13 +61,26 @@ class Data extends Component {
 		this.setState({ showCompetitors: newState });
 	};
 
-	render() {
-		var thead = this.keys.map((key, i) => {
-			if (!key) {
-				return null;
+	showTableData = (array) => {
+		return this.inclusionList.map((key, i) => {
+			let data;
+
+			if (key.ref === 'SpeedIndex' || key.ref === 'requestsFull') {
+				data = array[key.ref];
+			} else {
+				data = this.msToSeconds(array[key.ref]);
 			}
+
+		    return (
+	    		<td key={ i }>{data}</td>
+		    );
+		});
+	};
+
+	render() {
+		var thead = this.inclusionList.map((key, i) => {
 			return (
-				<th key={ i }>{key.replace(/([a-z](?=[A-Z]))/g, '$1 ')}</th>
+				<th key={ i }>{key.name}</th>
 			);
 		});
 
@@ -55,46 +88,32 @@ class Data extends Component {
 		let firstViewData = average.firstView;
 		let repeatViewData = average.repeatView;
 
-		var firstView = this.keys.map((key, i) => {
-			if (!key) {
-				return null;
-			}
-		    return (
-	    		<td key={ i }>{firstViewData[key]}</td>
-		    );
-		});
-
-		var repeatView = this.keys.map((key, i) => {
-			if (!key) {
-				return null;
-			}
-		    return (
-	    		<td key={ i }>{repeatViewData[key]}</td>
-		    );
-		});
-
-		let siteText = (this.props.showCompetitors) ? 'Site' : 'Competitor' ;
+		let summaryUrl = this.props.data.summary;
+		let siteText = (this.props.showCompetitors) ? 'Site' : 'Competitor';
 
 		return (
 			<table>
 				<thead>
 					<tr>
-						<th>{siteText}: { this.props.site.name } { this.props.connectivity }</th>
+						<th>
+							{siteText}: { this.props.site.name } { this.props.connectivity }<br />
+							<a href={summaryUrl} target="_blank">Full Results on Web Page Test</a>
+						</th>
 						{ thead }
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>First View</td>
-						{ firstView }
+						{ this.showTableData(firstViewData) }
 					</tr>
 					<tr>
 						<td>Repeat View</td>
-						{ repeatView }
+						{ this.showTableData(repeatViewData) }
 					</tr>
 					{ this.props.showCompetitors &&
 						<tr>
-							<td colSpan="5" className="competitors-wrapper">
+							<td colSpan={ this.inclusionListLength + 1 } className="competitors-wrapper">
 								<CompetitorSwitcher
 									showCompetitor={ this.showCompetitor }
 									yesOrNo={ this.state.showCompetitors[this.props.site.slug] }
