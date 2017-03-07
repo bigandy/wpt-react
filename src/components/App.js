@@ -1,49 +1,58 @@
 import React, { Component } from 'react';
 
-import Data from './Data';
-import ConnectivitySwitcher from './ConnectivitySwitcher';
-
-import config from '../config';
+// import config from '../config';
 
 
 class App extends Component {
-	constructor(props) {
-		super(props);
+	// constructor(props) {
+	// 	super(props);
 
-		this.state = {
-			connectivity: '3g',
-		};
+	// 	this.state = {
+	// 		connectivity: '3g',
+	// 	};
 
-		this.switchConnectivity = this.switchConnectivity.bind(this);
+	// 	this.switchConnectivity = this.switchConnectivity.bind(this);
+	// };
+
+	grabData() {
+		return require(`../data/results/master.json`);
 	};
 
-	grabData(site, connectivity, file) {
-		return require(`../data/results/${site}/${connectivity}/${file}`);
-	};
-
-	switchConnectivity() {
-		this.setState({
-			connectivity: this.state.connectivity === 'cable' ? '3g' : 'cable'
-		});
-	};
+	// switchConnectivity() {
+	// 	this.setState({
+	// 		connectivity: this.state.connectivity === 'cable' ? '3g' : 'cable'
+	// 	});
+	// };
 
 	render() {
-		const tables = config.sites.map((site, i) => {
+		const data = this.grabData();
+		console.log(data);
+
+		const results = data.map((date) => {
+			console.log(date);
 			return (
-				<Data
-					site={ site }
-					data={ this.grabData( site.slug, this.state.connectivity, 'master.json' ) }
-					key={ i }
-					connectivity={ this.state.connectivity }
-					showCompetitors={ true }
-				/>
+				<div>
+					<h2>{date.date}</h2>
+					{ date.data['3GResults'].map(site => {
+						const fv = site.average.firstView;
+						return (
+							<div>
+								<h3>{site.url}</h3>
+								<ul>
+									<li>Load Time {fv.loadTime}</li>
+									<li>TTFB {fv.TTFB}</li>
+								</ul>
+							</div>
+						);
+					}) }
+				</div>
 			);
 		});
 
 		return (
 			<div className="app-wrapper">
-				<ConnectivitySwitcher switchConnectivity={ this.switchConnectivity } connectivity={ this.state.connectivity } />
-				{ tables }
+				Version 2
+				{ results }
 			</div>
 
 		);

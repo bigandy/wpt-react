@@ -7,7 +7,7 @@
 		"country": "ec2-eu-west-1",
 		"browser": "Chrome"
 	},
-	"connectivity": "Cable",
+	"connectivity": "3G",
 	"sites": [
 		{
 			"slug": "group",

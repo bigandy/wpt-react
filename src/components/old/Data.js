@@ -9,8 +9,6 @@ class Data extends Component {
 
 		this.average = this.props.data.average;
 
-		// console.log(this.average.firstView);
-
 		this.inclusionList = [
 			{
 				'name': 'Load Time',
