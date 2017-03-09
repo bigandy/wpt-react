@@ -2,3 +2,4 @@
 [0307/080452.926:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
 [0307/080452.957:ERROR:exception_snapshot_win.cc(87)] thread ID 9160 not found in process
 [0307/080452.957:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0308/110121.442:ERROR:file_io.cc(30)] read: expected 36, observed 0
